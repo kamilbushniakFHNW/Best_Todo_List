@@ -9,6 +9,48 @@
 
 ## User Stories
 
+## U7: Delete Task
+
+**User Story**
+
+As a student, I want to delete tasks that I no longer need, so that I can keep my task list organized and up to date.
+
+### Acceptance Criteria
+
+- **Select Task:** The user can select a task to delete by its number.
+- **Delete Task:** The selected task is removed from the task list.
+- **Confirmation:** The system asks the user to confirm before deleting a task.
+- **Cancel Deletion:** The user can cancel the deletion without changing the task list.
+- **Updated List:** After deletion, the CLI displays the updated task list.
+
+---
+
+## U8: Exit and Cancel
+
+**User Story**
+
+As a student, I want to exit the program or cancel an action, so that I can stop an operation or close the application whenever I want.
+
+### Acceptance Criteria
+
+- **Exit Program:** The user can select an option from the main menu to exit the program.
+- **Cancel Action:** The user can cancel an ongoing action and return to the main menu.
+- **No Changes:** Cancelling an action does not modify existing tasks.
+
+---
+
+## U9: Mark Overdue Tasks
+
+**User Story**
+
+As a student, I want the system to automatically mark tasks that are overdue, so that I can easily identify missed deadlines and prioritize unfinished work.
+
+### Acceptance Criteria
+
+- **Check Due Dates:** The program compares task due dates with the current date.
+- **Mark Overdue Tasks:** If a task's due date has passed and the task is not completed, the due date is highlighted in red and the task is marked as overdue.
+- **Automatic Update:** The overdue status is updated whenever the task list is displayed.
+
 ### U10: Main Menu Navigation
 
 > **As a** student,  
