@@ -8,7 +8,28 @@
 | 4 | Andrii Kyrychenko |
 
 ## User Stories
-# User Stories
+#  User Stories
+
+### U1:Main Menu Navigation
+
+> **As a** student,  
+**I want to** see a numbered main menu when the app starts,  
+**So that** I can easily find and use every function of the app without remembering commands.
+
+#### Acceptance Criteria
+* **Start Screen:** When the program starts, the main menu displays the following options:
+  * `1.` Add task
+  * `2.` View tasks
+  * `3.` Mark task as done
+  * `4.` Delete task
+  * `5.` Show overdue tasks
+  * `6.` Add subtask
+  * `7.` Export PDF
+  * `0.` Exit
+* **Selection:** The user selects an option by entering a number (0–7) and pressing Enter.
+* **Return to Menu:** Completing an operation automatically returns the user to the main menu.
+
+(**Input Validation:** Any input outside the range 0–7 displays:  `"Invalid choice. Please enter a number from 0 to 7."` and re-displays the menu.)
 
 ### U2: Add Task
 
@@ -125,26 +146,22 @@ As a student, I want the system to automatically mark tasks that are overdue, so
 - **Mark Overdue Tasks:** If a task's due date has passed and the task is not completed, the due date is highlighted in red and the task is marked as overdue.
 - **Automatic Update:** The overdue status is updated whenever the task list is displayed.
 
-### U10: Main Menu Navigation
+### 1.10. U10: Reload Tasks
 
-> **As a** student,  
-**I want to** see a numbered main menu when the app starts,  
-**So that** I can easily find and use every function of the app without remembering commands.
+> *As a* student,  
+*I want* my tasks to be saved and reloaded automatically when I restart the app,  
+*So that* I can continue where I stopped last time without entering my tasks again.
 
 #### Acceptance Criteria
-* **Start Screen:** When the program starts, the main menu displays the following options:
-  * `1.` Add task
-  * `2.` View tasks
-  * `3.` Mark task as done
-  * `4.` Delete task
-  * `5.` Show overdue tasks
-  * `6.` Add subtask
-  * `7.` Export PDF
-  * `0.` Exit
-* **Selection:** The user selects an option by entering a number (0–7) and pressing Enter.
-* **Return to Menu:** Completing an operation automatically returns the user to the main menu.
-
-(**Input Validation:** Any input outside the range 0–7 displays:  `"Invalid choice. Please enter a number from 0 to 7."` and re-displays the menu.)
+* *Automatic Save:* Every change (add, mark as done, delete, add subtask) is persisted immediately to tasks.json.
+* *Saved Data:* For each task, the file stores:
+  * *Title*
+  * *Due Date* (DD.MM.YYYY)
+  * *Priority* (Low, Medium, High)
+  * *Status* (Open or Done)
+  * All associated *Subtasks* along with their individual status.
+* *Reload at Start:* When the program starts, all tasks are loaded from tasks.json before the main menu appears, displaying:  
+  "Tasks loaded."
 
 ---
 
