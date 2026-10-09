@@ -102,6 +102,29 @@ As a student, I want the system to automatically mark tasks that are overdue, so
 - **Mark Overdue Tasks:** If a task's due date has passed and the task is not completed, the due date is highlighted in red and the task is marked as overdue.
 - **Automatic Update:** The overdue status is updated whenever the task list is displayed.
 
+### U2: Add Task
+
+> **As a** student,
+**I want to** add new tasks to my Best_Todo_list,
+**So that** I can organize and keep track of my assignments.
+
+#### Acceptance Criteria
+* **Menu Option:** The user can select "Add Task" from the main menu.
+* **Task Title:** The user must enter a title for the task.
+* **Description:** The user can enter an optional description.
+
+### U3: Priority
+
+> **As a** student,
+**I want to** I want to assign a priority to my tasks,
+**So that** I know which tasks are most important and should be completed first.
+
+#### Acceptance Criteria
+* **Priority Option:** The user can choose between Low, Medium and High.
+* **Selection:** The user selects a priority by entering a number (1. Low, 2. Medium, 3. High).
+* **Default Priority:** If no priority is selected, the task automatically receives Medium priority.
+* **Display:** The priority is shown when viewing tasks.
+
 ### U10: Main Menu Navigation
 
 > **As a** student,  
