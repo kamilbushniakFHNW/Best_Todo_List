@@ -52,7 +52,7 @@ coverage.xml
 cover/
 
 #macguys 
-.DS_Store
+.DS_Store 
 
 # Translations
 *.mo
