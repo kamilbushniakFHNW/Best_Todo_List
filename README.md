@@ -7,8 +7,57 @@
 | 3 | Naveena Nagarajah |
 | 4 | Andrii Kyrychenko |
 
-## User Stories
+## User Stories 
+# User Stories
 
+## 4. View task
+
+**As a** student,
+**I want to** view my tasks and their details,
+**So that** I can see what I have to do and check the information of each task.
+
+### Acceptance Criteria
+
+- **View All Tasks:** The user can display all tasks grouped by workflow column (To Do, In Progress, Done).
+- **View Single Task:** The user can select one task to see its full details.
+- **Task Details:** The detail view shows the title, priority, due date, tags, subtasks, and current status.
+- **Empty Board:** If there are no tasks, the CLI shows a clear message instead of an empty list.
+- **Tasks Unchanged:** Viewing tasks does not modify them.
+
+---
+
+## 5. Mark task as done
+
+**As a** student,
+**I want to** mark a task as done,
+**So that** I can see what I have completed and focus on the remaining tasks.
+
+### Acceptance Criteria
+
+- **Mark as Done:** The user can mark any task from To Do or In Progress as done.
+- **Updated Status:** After marking, the task appears in the Done column.
+- **Keep Task Details:** The task keeps its title, priority, due date, tags, and subtasks.
+- **Already Done:** If the task is already done, the CLI informs the user and makes no change.
+- **Board Update:** The CLI immediately displays the task in the Done column.
+
+---
+
+## 6. Validation and Error handling
+
+**As a** student,
+**I want to** get clear messages when I enter something invalid,
+**So that** I can correct my mistake without the program crashing or losing my data.
+
+### Acceptance Criteria
+
+- **Empty Title:** A task cannot be created or saved with an empty title.
+- **Invalid Due Date:** A due date in the wrong format or a non-existent date is rejected, and the expected format is shown.
+- **Invalid Priority:** A priority outside the allowed values is rejected, and the allowed values are shown.
+- **Unknown Task:** If the user selects a task that does not exist, the CLI shows an error message.
+- **Invalid Menu Choice:** If the user enters an unknown command or menu option, the CLI shows the valid options.
+- **Retry Input:** After an invalid input, the user is asked to enter the value again.
+- **No Crash:** Invalid input never stops the program or causes an unhandled error.
+- **Data Unchanged:** Existing tasks are not changed when an input is rejected.
 ### U10: Main Menu Navigation
 
 > **As a** student,  
