@@ -1,3 +1,9 @@
+import json
+from pathlib import Path
+import add_task.add_task as add_task_module
+TASKS_FILE = Path(__file__).resolve().parent / "tasks.json" #This line I'm not sure how it works
+tasks = []
+
 def printMenu():
     print("""
     +==========================================+
@@ -29,7 +35,7 @@ def getUserChoice():
 def executeTask(choice):
     match choice:
             case "1":
-                placeholder("Add task")
+                add_task_module.add_task(tasks)
             case "2":
                 placeholder("View tasks")
             case "3":
