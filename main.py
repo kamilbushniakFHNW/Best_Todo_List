@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import add_task.add_task as add_task_module
 import view_task.view_task as view_task_module
+import delete_task.delete_task as delete_task_module
 TASKS_FILE = Path(__file__).resolve().parent / "tasks.json" #This line I'm not sure how it works
 tasks = []
 
@@ -42,7 +43,7 @@ def executeTask(choice):
             case "3":
                 placeholder("Mark task as done")
             case "4":
-                placeholder("Delete task")
+                delete_task_module.select_task_to_delete(tasks)
             case "5":
                 placeholder("Show overdue tasks")
             case "6":
