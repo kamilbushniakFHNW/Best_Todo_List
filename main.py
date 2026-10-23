@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import add_task.add_task as add_task_module
+import view_task.view_task as view_task_module
 TASKS_FILE = Path(__file__).resolve().parent / "tasks.json" #This line I'm not sure how it works
 tasks = []
 
@@ -37,7 +38,7 @@ def executeTask(choice):
             case "1":
                 add_task_module.add_task(tasks)
             case "2":
-                placeholder("View tasks")
+                view_task_module.view_tasks(tasks)
             case "3":
                 placeholder("Mark task as done")
             case "4":
