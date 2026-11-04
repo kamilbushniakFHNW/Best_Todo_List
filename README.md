@@ -119,6 +119,8 @@ New tasks always start with the status `Open`.
 - **Task Title:** The user must enter a title for the task.
 - **Description:** The user can enter an optional description.
 - **Due Date:** The user enters a due date in the format `DD.MM.YYYY`.
+- **Validation:** The user can't use the dates in past.
+- **Canceletion:** The user can cancel the creation of a new task at any time.
 - **Status:** A new task is saved with the status `Open`.
 
 ---
