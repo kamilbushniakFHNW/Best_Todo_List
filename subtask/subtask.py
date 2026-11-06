@@ -9,7 +9,7 @@ from view_task.view_task import (
 
 def print_tasks_with_subtasks(tasks):
     if len(tasks) == 0:
-        print("\nYou have no tasks yet. Add one with option 1.")
+        print("\nYou have no tasks yet.")
         return False
 
     for status in (STATUS_OPEN, STATUS_DONE):
@@ -64,7 +64,7 @@ def create_subtask(task, title):
 
 
 def mark_subtask_done(task, index):
-    subtask = task["subtasks"][index]
+    subtask = task["subtasks"][index] #index of a subtask
     if subtask["status"] == STATUS_DONE:
         return False
     subtask["status"] = STATUS_DONE
@@ -72,8 +72,7 @@ def mark_subtask_done(task, index):
 
 
 def print_subtasks(task):
-    """Print the subtasks of a task, indented, with a progress count."""
-    subtasks = task["subtasks"]
+    subtasks = task["subtasks"] #keys in dictionaries are strings
     done_count = count_done_subtasks(subtasks)
     print(f"\n{task['title']} - {done_count}/{len(subtasks)} subtasks done")
     for i in range(len(subtasks)):

@@ -25,6 +25,7 @@ def printMenu():
     │  [5]  Show overdue tasks     │
     │  [6]  Add subtask            │
     │  [7]  Export PDF             │
+    │  [8]  Edit tasks             │
     │  [0]  Exit                   │
     └──────────────────────────────┘
     """)
@@ -52,6 +53,8 @@ def executeTask(choice):
                 subtask_module.subtask_menu(tasks)
             case "7":
                 export_pdf_module.export_pdf(tasks)
+            case "8":
+                placeholder("Edit task")
             case "0":
                 print("Goodbye!")
                 return False
