@@ -139,10 +139,10 @@ def subtask_menu(tasks):
         choice = input("Enter an option: ").strip()
         if choice == "1":
             add_subtask(tasks)
-            return True
+            return
         if choice == "2":
             select_subtask_to_complete(tasks)
-            return True
+            return
         if choice == "3":
-            return False
+            return
         print("Invalid choice. Please enter 1, 2 or 3.")

@@ -1,12 +1,11 @@
 import json
-import time
 from pathlib import Path
 import add_task.add_task as add_task_module
 import view_task.view_task as view_task_module
 import delete_task.delete_task as delete_task_module
 import subtask.subtask as subtask_module
+import export_pdf.export_pdf as export_pdf_module
 TASKS_FILE = Path(__file__).resolve().parent / "tasks.json" #This line I'm not sure how it works
-PAUSE_SECONDS = 2
 tasks = []
 
 def printMenu():
@@ -38,7 +37,6 @@ def getUserChoice():
     return input("Enter an option: ").strip()
 
 def executeTask(choice):
-    pause = False
     match choice:
             case "1":
                 add_task_module.add_task(tasks)
@@ -51,15 +49,13 @@ def executeTask(choice):
             case "5":
                 placeholder("Show overdue tasks")
             case "6":
-                pause = subtask_module.subtask_menu(tasks)
+                subtask_module.subtask_menu(tasks)
             case "7":
-                placeholder("Export PDF")
+                export_pdf_module.export_pdf(tasks)
             case "0":
                 print("Goodbye!")
                 return False
            # TODO: inavlid user input
-    if pause:
-        time.sleep(PAUSE_SECONDS)
     return True
 
 def main():
