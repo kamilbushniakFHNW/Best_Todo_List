@@ -5,6 +5,7 @@ import view_task.view_task as view_task_module
 import delete_task.delete_task as delete_task_module
 import subtask.subtask as subtask_module
 import export_pdf.export_pdf as export_pdf_module
+import mark_done.mark_done as mark_done_module
 TASKS_FILE = Path(__file__).resolve().parent / "tasks.json" #This line I'm not sure how it works
 tasks = []
 
@@ -44,7 +45,7 @@ def executeTask(choice):
             case "2":
                 view_task_module.view_tasks(tasks)
             case "3":
-                placeholder("Mark task as done")
+                mark_done_module.select_task_to_mark_done(tasks)
             case "4":
                 delete_task_module.select_task_to_delete(tasks)
             case "5":

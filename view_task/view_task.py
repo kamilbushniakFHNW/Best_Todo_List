@@ -10,11 +10,13 @@ def count_done_subtasks(subtasks):
             done_count += 1
     return done_count
 
-
 def format_task_line(number, task):
     """Return one short line for the task list."""
     line = f"{number}. {task['title']} | {task['priority']}"
     line += f" | {task['due_date']}"
+
+    if task["status"] == STATUS_DONE and "done_date" in task:
+        line += f" | marked as done: {task['done_date']}"
 
     subtasks = task["subtasks"]
     if len(subtasks) > 0:
@@ -36,6 +38,8 @@ def format_task_details(task):
     details += f"Priority:    {task['priority']}\n"
     details += f"Due date:    {task['due_date']}\n"
     details += f"Status:      {task['status']}\n"
+    if task["status"] == STATUS_DONE and "done_date" in task:
+        details += f"Done on:     {task['done_date']}\n"
 
     subtasks = task["subtasks"]
     if len(subtasks) == 0:
