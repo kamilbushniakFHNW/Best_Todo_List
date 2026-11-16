@@ -1,1 +1,10 @@
-[]
+[][
+    {
+        "title": "buy a birthday gift",
+        "description": "within 100-200CHF",
+        "priority": "High",
+        "due_date": "12.12.2026",
+        "status": "Open",
+        "subtasks": []
+    }
+]
