@@ -1,3 +1,7 @@
+# is_valid_task_number is imported here so the other features can
+# keep importing it from view_task.
+from validation import ask_task_index, is_valid_task_number
+
 STATUS_OPEN = "Open"
 STATUS_DONE = "Done"
 
@@ -9,6 +13,7 @@ def count_done_subtasks(subtasks):
         if subtask["status"] == STATUS_DONE:
             done_count += 1
     return done_count
+
 
 def format_task_line(number, task):
     """Return one short line for the task list."""
@@ -74,31 +79,6 @@ def print_task_group(tasks, status):
         print("(no tasks)")
 
 
-def is_valid_task_number(text, task_count):
-    """Return True if text is a whole number between 1 and task_count."""
-    if not text.isdigit():
-        return False
-    number = int(text)
-    return 1 <= number <= task_count
-
-
-def ask_task_number(tasks):
-    """Ask for a task number.
-
-    Return the list index, or None if the user just presses Enter.
-    """
-    prompt = "Task number for details (Enter to go back): "
-    answer = input(prompt).strip()
-
-    while answer != "" and not is_valid_task_number(answer, len(tasks)):
-        print(f"Task not found. Please enter a number from 1 to {len(tasks)}.")
-        answer = input(prompt).strip()
-
-    if answer == "":
-        return None
-    return int(answer) - 1
-
-
 def print_all_tasks(tasks):
     """Print all tasks grouped by status. Return False if there are none."""
     if len(tasks) == 0:
@@ -116,6 +96,6 @@ def view_tasks(tasks):
     if not has_tasks:
         return
 
-    index = ask_task_number(tasks)
+    index = ask_task_index(tasks, "see details")
     if index is not None:
         print(format_task_details(tasks[index]))

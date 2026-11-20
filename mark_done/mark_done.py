@@ -1,27 +1,12 @@
+from datetime import date
+
+from subtask.subtask import ask_yes_no
+from validation import ask_task_index
 from view_task.view_task import (
     STATUS_DONE,
     count_done_subtasks,
-    is_valid_task_number,
     print_all_tasks,
 )
-from subtask.subtask import ask_yes_no
-from datetime import date
-
-def ask_task_to_mark(tasks):
-    """Ask which task to mark as done.
-
-    Return the list index, or None if the user just presses Enter.
-    """
-    prompt = "Task number to mark as done (Enter to go back): "
-    answer = input(prompt).strip()
-
-    while answer != "" and not is_valid_task_number(answer, len(tasks)):
-        print(f"Task not found. Please enter a number from 1 to {len(tasks)}.")
-        answer = input(prompt).strip()
-
-    if answer == "":
-        return None
-    return int(answer) - 1
 
 
 def count_open_subtasks(task):
@@ -64,7 +49,7 @@ def select_task_to_mark_done(tasks):
     if not print_all_tasks(tasks):
         return
 
-    index = ask_task_to_mark(tasks)
+    index = ask_task_index(tasks, "mark as done")
     if index is None:
         return
 

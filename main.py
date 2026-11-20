@@ -61,7 +61,8 @@ def executeTask(choice):
             case "0":
                 print("Goodbye!")
                 return False
-           # TODO: inavlid user input
+            case _:
+                print("Invalid choice. Please enter a number from 0 to 8.")
     return True
 
 def main():
